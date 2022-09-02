@@ -27,10 +27,10 @@ const WorkoutForm = () => {
             setError(json.error);
         }
         if(response.ok) {
+            setError(null);
             setTitle('');
             setLoad('');
             setReps('');
-            setError(null);
             console.log('new workout added', json);
             dispatch({type: 'CREATE_WORKOUT', payload: json});
         }
